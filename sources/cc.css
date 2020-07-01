@@ -1,0 +1,25 @@
+.list-header::before {
+  top: 8px;
+  right: 37px;
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  padding: 2px;
+  content: attr(data-counter);
+  background-color: rgba(9,30,66,.08);
+  text-align: center;
+  border-radius: 3px;
+}
+
+.list-header-extras-menu {
+  padding: 2px !important;
+}
+
+.list-header-extras {
+  top: 8px !important;
+  right: 8px !important;
+}
+
+.list-header.is-menu-shown, .list-header.is-subscribe-shown {
+    padding-right: 65px !important;
+}

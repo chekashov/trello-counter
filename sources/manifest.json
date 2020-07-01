@@ -1,0 +1,18 @@
+{
+	"manifest_version": 2,
+	"name": "Card Counter",
+	"version": "0.3",
+	"description": "Adds a card counter in each Trello list without access to board data",
+	"content_scripts": [
+		{
+			"matches": [
+				"https://trello.com/b/*"
+			],
+			"js": ["cc.js"],
+			"css": ["cc.css"]
+		}
+	],
+  "icons": { "16": "icon16.png",
+             "48": "icon48.png",
+             "128": "icon128.png" }
+}
