@@ -1,25 +1,47 @@
-.list-header::before {
+:root {
+  --c-width: 40px;
+  --c-gutter: 5px;
+}
+
+.counter-cards .list-header::before,
+.counter-points .list-header::after {
   top: 8px;
-  right: 37px;
   position: absolute;
   height: 20px;
-  width: 20px;
-  padding: 2px;
-  content: attr(data-counter);
-  background-color: rgba(9,30,66,.08);
+  padding: 2px 0;
+  width: var(--c-width);
   text-align: center;
   border-radius: 3px;
 }
 
-.list-header-extras-menu {
+.counter-cards .list-header::before {
+  right: 37px;
+  content: attr(data-cards);
+  background-color: rgba(9,30,66,.08);
+}
+
+.counter-points .list-header::after {
+  right: calc(37px + var(--c-width) + var(--c-gutter));
+  content: attr(data-points);
+  color: #fff;
+  background-color: #51e898;
+}
+
+.counter-cards:not(.counter-points) .list-header.is-menu-shown,
+.counter-cards:not(.counter-points) .list-header.is-subscribe-shown {
+  padding-right: calc(41px + var(--c-width)) !important;
+}
+
+.counter-cards.counter-points .list-header.is-menu-shown,
+.counter-cards.counter-points .list-header.is-subscribe-shown {
+  padding-right: calc(41px + var(--c-width) * 2 + var(--c-gutter)) !important;
+}
+
+.counter-cards .list-header-extras-menu {
   padding: 2px !important;
 }
 
-.list-header-extras {
+.counter-cards .list-header-extras {
   top: 8px !important;
   right: 8px !important;
-}
-
-.list-header.is-menu-shown, .list-header.is-subscribe-shown {
-    padding-right: 65px !important;
 }
