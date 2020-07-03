@@ -33,12 +33,13 @@ function formatCounter(num) {
 
 function refreshCounters() {
   let listHeaders = document.querySelectorAll('.list-header');
-  let header, list, cards, saved, badge;
+  let header, headerName, list, cards, saved, badge;
   let quantity = 0;
   let points = 0;
   for (var i = 0; i < listHeaders.length; i++) {
       // Define all elements
       header = listHeaders[i];
+      headerName = header.querySelector('.list-header-name');
       list = header.parentNode;
       cards = list.querySelectorAll('a.list-card');
       quantity = cards.length;
@@ -64,6 +65,8 @@ function refreshCounters() {
         header.setAttribute('data-points', '');
         list.classList.remove('counter-points');
       }
+
+      headerName.dispatchEvent(new Event('input'));
   }
 }
 

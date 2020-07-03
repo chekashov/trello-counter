@@ -15,33 +15,48 @@
 }
 
 .counter-cards .list-header::before {
-  right: 37px;
+  right: 8px;
   content: attr(data-cards);
-  background-color: rgba(9,30,66,.08);
+  background-color: rgba(9, 30, 66, .08);
 }
 
 .counter-points .list-header::after {
-  right: calc(37px + var(--c-width) + var(--c-gutter));
+  right: calc(8px + var(--c-width) + var(--c-gutter));
   content: attr(data-points);
   color: #fff;
-  background-color: #51e898;
+  background-color: rgba(97, 189, 79);
 }
 
 .counter-cards:not(.counter-points) .list-header.is-menu-shown,
 .counter-cards:not(.counter-points) .list-header.is-subscribe-shown {
-  padding-right: calc(41px + var(--c-width)) !important;
+  padding-right: calc(12px + var(--c-width)) !important;
+}
+
+.counter-cards:not(.counter-points) .list-header-target {
+  right: calc(12px + var(--c-width)) !important;
 }
 
 .counter-cards.counter-points .list-header.is-menu-shown,
 .counter-cards.counter-points .list-header.is-subscribe-shown {
-  padding-right: calc(41px + var(--c-width) * 2 + var(--c-gutter)) !important;
+  padding-right: calc(12px + var(--c-width) * 2 + var(--c-gutter)) !important;
+}
+
+.counter-cards.counter-points .list-header-target {
+  right: calc(12px + var(--c-width) * 2 + var(--c-gutter)) !important;
 }
 
 .counter-cards .list-header-extras-menu {
-  padding: 2px !important;
+  padding: 2px 0 !important;
+  width: var(--c-width) !important;
+  opacity: 0 !important;
 }
 
 .counter-cards .list-header-extras {
   top: 8px !important;
   right: 8px !important;
+}
+
+.list-header-extras-menu:hover {
+  background-color: #d9dce2 !important;
+  opacity: 1 !important;
 }
